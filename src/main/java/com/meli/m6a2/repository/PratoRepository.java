@@ -26,7 +26,7 @@ public class PratoRepository {
         Prato prato = pratos.get(id);
 
         if(prato == null){
-            throw new PratoNotFoundException("Prato não encontrado");
+            throw new PratoNotFoundException( String.format( "Prato com id=%s não encontrado", id ));
         }
 
         return prato;

@@ -24,7 +24,7 @@ public class MesaRepository {
         Mesa mesa = mesas.get(id);
 
         if(mesa == null){
-            throw new MesaNotFoundException("Mesa não encontrada");
+            throw new MesaNotFoundException( String.format("Mesa com id=%s não foi encontrada", id ));
         }
 
         return mesa;

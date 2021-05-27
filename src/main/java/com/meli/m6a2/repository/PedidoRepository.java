@@ -19,7 +19,7 @@ public class PedidoRepository {
         List<Pedido> pedidos = this.pedidos.get(id);
 
         if(pedidos == null){
-            throw new PedidoNotFoundException("Pedido não encontrada");
+            throw new PedidoNotFoundException( String.format( "Pedido com id=%s não foi encontrado", id ));
         }
 
         return pedidos;

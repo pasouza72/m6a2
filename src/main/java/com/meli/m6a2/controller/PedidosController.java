@@ -1,7 +1,5 @@
 package com.meli.m6a2.controller;
 
-import com.meli.m6a2.builder.PedidoBuilder;
-import com.meli.m6a2.model.Mesa;
 import com.meli.m6a2.response.PedidoResponse;
 import com.meli.m6a2.service.PedidosService;
 import org.springframework.beans.factory.annotation.Autowired;

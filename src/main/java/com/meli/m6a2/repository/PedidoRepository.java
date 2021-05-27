@@ -1,5 +1,6 @@
 package com.meli.m6a2.repository;
 
+import com.meli.m6a2.exception.PedidoNotFoundException;
 import com.meli.m6a2.model.Mesa;
 import com.meli.m6a2.model.Pedido;
 import com.meli.m6a2.model.Prato;
@@ -13,21 +14,12 @@ public class PedidoRepository {
 
     private final Map<Long, List<Pedido>> pedidos = new HashMap<>();
 
-    @PostConstruct
-    public void init(){
-        Mesa mesa = new Mesa(1L);
-        List<Prato> pratos = Arrays.asList(
-                new Prato(1L, 5, "Coxinha de Frango"),
-                new Prato(2L, 8, "Pastel"));
-
-        pedidos.put(1L, Collections.singletonList(new Pedido(1L, mesa, pratos)));
-    }
 
     public List<Pedido> buscaPedidosPorIdMesa(Long id){
         List<Pedido> pedidos = this.pedidos.get(id);
 
         if(pedidos == null){
-            throw new RuntimeException("Pedido não encontrada");
+            throw new PedidoNotFoundException("Pedido não encontrada");
         }
 
         return pedidos;

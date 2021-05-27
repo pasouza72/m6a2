@@ -41,6 +41,5 @@ public class PedidosService {
         pedidoRepository.criaPedido(pedido);
 
         caixaRepository.atualizaCaixa(valorTotal);
-
     }
 }

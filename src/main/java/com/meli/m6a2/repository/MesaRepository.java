@@ -1,5 +1,6 @@
 package com.meli.m6a2.repository;
 
+import com.meli.m6a2.exception.MesaNotFoundException;
 import com.meli.m6a2.model.Mesa;
 import org.springframework.stereotype.Component;
 
@@ -23,7 +24,7 @@ public class MesaRepository {
         Mesa mesa = mesas.get(id);
 
         if(mesa == null){
-            throw new RuntimeException("Mesa não encontrada");
+            throw new MesaNotFoundException("Mesa não encontrada");
         }
 
         return mesa;

@@ -1,5 +1,6 @@
 package com.meli.m6a2.repository;
 
+import com.meli.m6a2.exception.PratoNotFoundException;
 import com.meli.m6a2.model.Prato;
 import org.springframework.stereotype.Component;
 
@@ -25,7 +26,7 @@ public class PratoRepository {
         Prato prato = pratos.get(id);
 
         if(prato == null){
-            throw new RuntimeException("Prato não encontrada");
+            throw new PratoNotFoundException("Prato não encontrado");
         }
 
         return prato;
